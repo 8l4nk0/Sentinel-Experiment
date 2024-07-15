@@ -1,8 +1,8 @@
 # Sentinel-Experiment
-tl, dr: Mappare i tentativi di autenticazione fallita di tutto il mondo con Azure Sentinel
+tl, dr: Mappare i tentativi di autenticazione fallita di tutto il mondo con Azure Sentinel<br>
 
-L'obiettivo di questo esperimento era di riuscire a mappare i tentativi di autenticazione fallita su una macchina virtuale windows vulnerabile grazie a Azure Sentinerl.
-Svolgimento:
+L'obiettivo di questo esperimento era di riuscire a mappare i tentativi di autenticazione fallita su una macchina virtuale windows vulnerabile grazie a Azure Sentinerl.<br>
+Svolgimento:<br>
 1)
 Creazione della macchina virtuale Windows 10 tramite il servizio Azure (io ho fatto la registrazione gratuita).
 Ho aperto la macchina virtuale con la funzionalità Windows Desktop Remoto tramite l'IP pubblico della VM.
