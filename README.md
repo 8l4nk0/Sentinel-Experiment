@@ -1,4 +1,4 @@
-[log.txt](https://github.com/user-attachments/files/16236452/log.txt)# Sentinel-Experiment
+# Sentinel-Experiment
 tl, dr: Mappare i tentativi di autenticazione fallita di tutto il mondo con Azure Sentinel
 
 L'obiettivo di questo esperimento era di riuscire a mappare i tentativi di autenticazione fallita su una macchina virtuale windows vulnerabile grazie a Azure Sentinerl.
@@ -11,7 +11,7 @@ Aperta la VM ho poi disattivato il firewall a livello di dominio, di privato e p
 
 2)
 Creazione dell'ambiente di lavoro dei log su Azure. 
-Ho collegato questo ambiente di lavoro alla VM in modo tale che potesse leggerne i file di sistema. Ci servirà per la fase 3).
+Ho collegato questo ambiente di lavoro alla VM in modo tale che potesse leggerne i file di sistema. Ci servirà per la fase 4).
 
 3)
 Sulla VM poi ho aperto il visualizzatore eventi per vedere quali fossero gli eventi in corso. 
@@ -25,7 +25,7 @@ Sfruttando questa informazione e grazie all'API key del servizio geoiplocation.i
 vari valori quali latitudine, longitudine, ip sorgente, ip destinazione, stato, paese, città, orario e giorno che lo script salva in un file al
 percorso C:\ProgramData\failed_rdp.log della VM.
 
-5)
+4)
 Grazie al collegamento effettuato prima, ora possiamo creare un log personalizzato chiamato FAILED_RDP_WITH_GEO_CL in cui carichiamo il contenuto del file generato dallo script Powershell.
 Un esempio del file che lo script ha generato a me:
 ![esempio log](https://github.com/user-attachments/assets/a4308a33-8994-4daf-baf6-4941d9a5c153)
@@ -49,7 +49,7 @@ FAILED_RDP_WITH_GEO_CL
 In questo modo riusciamo a vedere i singoli valori dei campi che ci servono per la mappatura.
 
 
-6)
+5)
 Dopo aver creato un'istanza di Azure Sentinel e averla collegata al nostro ambiente di lavoro dei log ho scritto questa query per ottere i valori dei vari campi più
 il campo event_count() per tenere traccia del numero di tentativi effettuati dalle singole differenti sorgenti. 
 Ho usato sempre una query KQL con uso di espressioni regolari per ordinare e filtrare i valori. Ho inoltre escluso tutti i valori con:
@@ -72,7 +72,7 @@ FAILED_RDP_WITH_GEO_CL
 | summarize event_count= count() by SourceHost, DestinationHost, Latitude, Longitude, Country, Label
 
 
-7)
+6)
 Impostando la visualizzazione dei log su Mappa, ho filtrato i log per latitudine e longitudine differenziandone il colore e la grandezza in base al numero di tentativi effettuati.
 Questo è il risultato finale:
 
