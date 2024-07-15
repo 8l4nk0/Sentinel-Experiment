@@ -29,6 +29,7 @@ percorso C:\ProgramData\failed_rdp.log della VM.<br>
 <h2>Fase 4</h2>
 Grazie al collegamento effettuato prima, ora possiamo creare un log personalizzato chiamato FAILED_RDP_WITH_GEO_CL in cui carichiamo il contenuto del file generato dallo script Powershell.
 Un esempio del file che lo script ha generato a me:<br>
+
 ![esempio log](https://github.com/user-attachments/assets/a4308a33-8994-4daf-baf6-4941d9a5c153)<br>
 
 Siccome i log registrati nel file appaiono come stringa unica, ho utilizzato una query in KQL per filtrare i singoli valori tramite espressioni regolari:<br><br>
