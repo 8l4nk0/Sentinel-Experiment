@@ -45,6 +45,9 @@ FAILED_RDP_WITH_GEO_CL<br>
 | project Latitude, Longitude, DestinationHost, SourceHost, State, Country, Label, Timestamp<br><br>
 
 
+Il funzionamento di queste espressioni regolari è che vanno a cercare la voce specificata dopo la @ e la stampano come risultato della query.<br>
+Notate che sono praticamente quasi tutte uguali tranne per latitudine e longitudine perché sono valori decimali sia positivi che negativi e il valore Country che 
+viene stampato insieme all'IP sorgente corrispondente.<br>
 In questo modo riusciamo a vedere i singoli valori dei campi che ci servono per la mappatura.<br>
 
 
