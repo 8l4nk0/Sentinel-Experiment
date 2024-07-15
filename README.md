@@ -4,7 +4,7 @@ tl, dr: Mappare i tentativi di autenticazione fallita di tutto il mondo con Azur
 L'obiettivo di questo esperimento era di riuscire a mappare i tentativi di autenticazione fallita su una macchina virtuale windows vulnerabile grazie a Azure Sentinerl.<br>
 Svolgimento:<br>
 
-1)
+<h2>Fase 1</h2>
 Creazione della macchina virtuale Windows 10 tramite il servizio Azure (io ho fatto la registrazione gratuita).<br>
 Ho aperto la macchina virtuale con la funzionalità Windows Desktop Remoto tramite l'IP pubblico della VM.<br>
 Dalle impostazioni della VM su Azure ho modificato la regola delle connessioni in entrata così che la VM fosse soggetta a qualsiasi scan che fossero SYN o ICMP o ...<br>
